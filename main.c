@@ -5,6 +5,10 @@
 
 int main(int argc, char *argv[]){
     char *mode=argv[1];
+     if(!strcmp(mode,"--help")){
+        helpMenu();
+         return 0;
+    }
     if(argc<3){
         printf("------------------------------------------------------------------------------\n");
         printf("ERROR: ./a.out : INVALID ARGUMENTS\nUSAGE\n");
@@ -13,11 +17,7 @@ int main(int argc, char *argv[]){
         printf("To get help pass like : ./a.out --help\n");
         printf("------------------------------------------------------------------------------\n");
         return 0;
-    }
-    // check for CLA [-v]
-    if(!strcmp(mode,"--help")){
-        helpMenu();
-    }
+    }   
     else if(!strcmp(mode,"-v")){
         // declaring the structure 
         Details detail;
